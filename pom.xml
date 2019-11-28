@@ -14,9 +14,8 @@
     <modules>
         <module>concurrent</module>
         <module>se</module>
-        <module>designmode</module>
-        <module>designmode</module>
         <module>algorithm</module>
+        <module>design</module>
     </modules>
 
     <!--依赖管理-->
@@ -27,7 +26,30 @@
                 <artifactId>junit</artifactId>
                 <version>4.12</version>
             </dependency>
+            <dependency>
+                <groupId>org.projectlombok</groupId>
+                <artifactId>lombok</artifactId>
+                <version>1.18.10</version>
+                <scope>provided</scope>
+            </dependency>
         </dependencies>
     </dependencyManagement>
 
+    <!--项目构建管理-->
+    <build>
+        <!--插件管理-->
+        <pluginManagement>
+            <plugins>
+                <!--编译器的JDK版本和字符集-->
+                <plugin>
+                    <artifactId>maven-compiler-plugin</artifactId>
+                    <configuration>
+                        <source>1.8</source>
+                        <target>1.8</target>
+                        <encoding>utf-8</encoding>
+                    </configuration>
+                </plugin>
+            </plugins>
+        </pluginManagement>
+    </build>
 </project>

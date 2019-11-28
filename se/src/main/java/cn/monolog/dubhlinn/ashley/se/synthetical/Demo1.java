@@ -3,7 +3,7 @@ package cn.monolog.dubhlinn.ashley.se.synthetical;
 /**
  * 用于验证String的不可变特性
  * @author dubhlinn
- * @date
+ * @date 2019-11-17
  */
 public class Demo1 {
 
