@@ -76,13 +76,13 @@ public class Demo2 {
         int[] oddArr = filterOdd(arr);
         //对奇数数组进行排序，从大到小
         bubbleSort(oddArr);
-        //判断对于数组下标，k是否越界
-        if (oddArr.length < k) {
+        //捕获数组越界异常
+        try {
+            //尝试返回指定元素
+            return oddArr[k-1];
+        } catch (ArrayIndexOutOfBoundsException e) {
             //如果越界，则返回0
             return 0;
-        } else {
-            //如果不越界，则返回指定元素
-            return oddArr[k-1];
         }
     }
 
@@ -94,7 +94,7 @@ public class Demo2 {
         //给定一个数组
         int[] arr = {12,7,6,9,22,21,4,3,14,18,15,28,13,67,35,34,30,29,44,49,53,54,98,2,1,61};
         //给定顺序数
-        int k = 6;
+        int k = 60;
         //查找数组第k大的奇数
         int result = findKth(arr, k);
         //打印结果
