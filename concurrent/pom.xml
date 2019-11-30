@@ -11,5 +11,11 @@
 
     <artifactId>ashley.concurrent</artifactId>
 
-
+    <!--依赖管理-->
+    <dependencies>
+        <dependency>
+            <groupId>junit</groupId>
+            <artifactId>junit</artifactId>
+        </dependency>
+    </dependencies>
 </project>

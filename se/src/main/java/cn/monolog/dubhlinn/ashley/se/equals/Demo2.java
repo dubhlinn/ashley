@@ -14,8 +14,14 @@ public class Demo2 {
      */
     @Test
     public void test1() {
+        String str = "llo";
         String str1 = "hello";
         String str2 = "he" + new String("llo");
+        String str3 = "he" + "llo";
+        String str4 = "he" + str;
         System.err.println(str1 == str2);
+        System.err.println(str1 == str3);
+        System.err.println(str1 == str4);
+        System.err.println(str1 == str1.intern());
     }
 }

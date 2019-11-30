@@ -30,12 +30,13 @@ public class Demo1 {
     /**
      * 各种基本类型变量的声明
      * 分析：double类型的数字要加d，long类型的数字要加l，但是都可以省略
-     * 唯独float类型的f不能省略，否则编译错误
+     * 唯独float类型的f不能省略，否则编译错误，因为省略时默认为double，向下转型会丢精度
      */
     @Test
     public void test2() {
         int i = 10;
-//        float f = 1.1; //本行编译错误，F不能省略
+//        float f = 1.1; //本行编译错误，1.1默认为double类型，不能向下转型
+        double fd = 34.4F;  //本行编译通过，可以向上转型
         double d = 34.4;
         long l = 4990;
     }
