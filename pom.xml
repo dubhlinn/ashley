@@ -32,6 +32,12 @@
                 <version>1.18.10</version>
                 <scope>provided</scope>
             </dependency>
+            <dependency>
+                <groupId>cglib</groupId>
+                <artifactId>cglib</artifactId>
+                <version>2.2.2</version>
+            </dependency>
+
         </dependencies>
     </dependencyManagement>
 
@@ -42,7 +48,9 @@
             <plugins>
                 <!--编译器的JDK版本和字符集-->
                 <plugin>
+                    <groupId>org.apache.maven.plugins</groupId>
                     <artifactId>maven-compiler-plugin</artifactId>
+                    <version>3.5.1</version>
                     <configuration>
                         <source>1.8</source>
                         <target>1.8</target>
