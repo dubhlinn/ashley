@@ -16,6 +16,16 @@ public class Person {
     private int age;
 
     /**
+     * 构造方法
+     */
+    public Person() {
+    }
+    public Person(String name, int age) {
+        this.name = name;
+        this.age = age;
+    }
+
+    /**
      * getters & setters
      */
     public String getName() {
