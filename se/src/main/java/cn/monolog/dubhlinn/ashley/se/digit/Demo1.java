@@ -52,4 +52,18 @@ public class Demo1 {
         s1 += 1;  //本行编译通过，相当于 s1 = (short) (s1+1)
         s1 = (short) (s1 + 1);
     }
+
+    /**
+     * int类型的除法
+     * 两个int类型的数字相除，结果还是int
+     * 而且并不会四舍五入，而是向下取整
+     * 如果用double类型来接收计算结果，也是先得到一个int，再强转为double
+     */
+    @Test
+    public void test4() {
+        int i = 10 / 4;
+        double j = 10 / 4;
+        System.out.println("10/4=" + i);
+        System.out.println("10/4=" + j);
+    }
 }
