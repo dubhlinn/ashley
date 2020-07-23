@@ -105,4 +105,40 @@ public class Main {
         System.out.println("排序后");
         personList.forEach(person -> System.out.println(person));
     }
+
+    /**
+     * 性能测试：大数据量排序
+     */
+    @Test
+    public void test3() {
+        //新建随机数工具实例
+        Random random = new Random();
+
+        //新建2万条数据
+        List<Person> persons = new ArrayList<>();
+        for (int i = 0 ; i < 20000 ; i++) {
+            Person person = Person.builder()
+                    .name("王" + random.nextInt())
+                    .age(random.nextInt(1000000))
+                    .build();
+            persons.add(person);
+        }
+
+        //获取排序前的时间戳
+        long start = System.currentTimeMillis();
+
+        //按年龄倒序排列
+        persons.sort(new Comparator<Person>() {
+            @Override
+            public int compare(Person o1, Person o2) {
+                return o1.getAge() - o2.getAge();
+            }
+        });
+
+        //获取排序后的时间戳
+        long end = System.currentTimeMillis();
+
+        //打印排序耗时
+        System.out.println("排序耗时：" + (end - start) + "毫秒");
+    }
 }

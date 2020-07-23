@@ -1,10 +1,19 @@
 package cn.monolog.dubhlinn.ashley.se.sort;
 
+import lombok.AllArgsConstructor;
+import lombok.Builder;
+import lombok.Data;
+import lombok.NoArgsConstructor;
+
 /**
  * 实体类，用于验证对象排序
  * @author dubhlinn
  * @date 2019-11-28
  */
+@Data
+@NoArgsConstructor
+@AllArgsConstructor
+@Builder
 public class Person {
     /*
      * 姓名
@@ -14,32 +23,6 @@ public class Person {
      * 年龄
      */
     private int age;
-
-    /**
-     * 构造方法
-     */
-    public Person() {
-    }
-    public Person(String name, int age) {
-        this.name = name;
-        this.age = age;
-    }
-
-    /**
-     * getters & setters
-     */
-    public String getName() {
-        return name;
-    }
-    public void setName(String name) {
-        this.name = name;
-    }
-    public int getAge() {
-        return age;
-    }
-    public void setAge(int age) {
-        this.age = age;
-    }
 
     /**
      * 重写toString方法
