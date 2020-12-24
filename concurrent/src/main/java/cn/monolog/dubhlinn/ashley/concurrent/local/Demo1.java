@@ -17,15 +17,14 @@ public class Demo1 {
     /**
      * 线程隔离变量
      */
-    private static ThreadLocal<String> ISOLATED_VAL = ThreadLocal.withInitial(() -> "");
+    private static final ThreadLocal<String> ISOLATED_VAL = ThreadLocal.withInitial(() -> "");
 
     /**
      * 打印
-     * @param threadName 线程名称 必填
      */
-    private static void print(String threadName) {
-        System.out.println("线程[" + threadName + "] 普通变量 = " + VAL);
-        System.out.println("线程[" + threadName + "] 线程隔离变量 = " + ISOLATED_VAL.get());
+    private static void print() {
+        System.out.println("线程[" + Thread.currentThread().getName() + "] 普通变量 = " + VAL);
+        System.out.println("线程[" + Thread.currentThread().getName() + "] 线程隔离变量 = " + ISOLATED_VAL.get());
     }
 
     /**
@@ -34,7 +33,7 @@ public class Demo1 {
      */
     public static void main(String[] args) throws InterruptedException {
         //声明线程数量
-        int threadNum = 10;
+        int threadNum = 100;
 
         //线程计数器
         CountDownLatch counter = new CountDownLatch(threadNum);
@@ -49,7 +48,7 @@ public class Demo1 {
                 String localVal = ISOLATED_VAL.get();
                 ISOLATED_VAL.set(localVal + "i");
                 //打印
-                print(Thread.currentThread().getName());
+                print();
             });
             try {
                 //启动线程
