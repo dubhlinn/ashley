@@ -146,6 +146,11 @@ public class LineEquationUtil {
 
             //第二层循环：选中行的上面的所有行，以下称为——比较行
             for (int j = 0 ; j < i ; j++) {
+                //如果已经是0的，则跳过
+                if (selectedRow[j] == 0) {
+                    continue;
+                }
+
                 //计算选中行应该乘以的比例
                 double ratio = matrix[j][j] / selectedRow[j];
 
